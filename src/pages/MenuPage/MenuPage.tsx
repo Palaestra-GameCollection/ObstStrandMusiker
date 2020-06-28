@@ -3,7 +3,6 @@ import "./MenuPage.css";
 import { Button, NumberInput } from "../../components";
 import { useSelector } from "react-redux";
 import { RootStateType } from "../../redux/reducer";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
 export interface MenuPageProps {}
@@ -26,7 +25,7 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
       <Button
         value={"zufällige\nkarte"}
         onClick={() => {
-          history.push("/card/" + getRandomInt(0, 11));
+          history.push("/card/" + getRandomInt(0, cards.length - 1));
         }}
       />
       <Button

@@ -12,7 +12,7 @@ function App() {
 
   React.useEffect(() => {
     dispatch(fetchData());
-  }, []);
+  }, [dispatch]);
 
   return (
     <section className='desktop_wrapper'>
