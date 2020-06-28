@@ -1,0 +1,29 @@
+.card {
+  box-shadow: #33333346 0 0 10px;
+}
+
+.card__valuelist {
+  list-style: none;
+  counter-reset: items;
+}
+
+.card__valuelist .card__value {
+  display: flex;
+  counter-increment: items;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.card__valuelist .card__value::before {
+  color: #000000;
+  margin-right: 1.5rem;
+  display: block;
+  height: 100%;
+}
+
+.card__valuelist .card__value:before {
+  content: "0" counter(items);
+}
+.card__valuelist .card__value:nth-child(n + 10):before {
+  content: "" counter(items);
+}

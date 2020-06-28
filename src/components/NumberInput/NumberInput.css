@@ -1,0 +1,15 @@
+.numberinput {
+  border: 0.2rem solid #333333;
+  font-size: 1.7rem;
+  outline: none;
+  box-shadow: none;
+  background-color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.numberinput:focus {
+  outline: none;
+}

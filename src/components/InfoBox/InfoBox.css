@@ -1,0 +1,29 @@
+.infobox {
+  height: 3rem;
+  background-repeat: no-repeat;
+  width: 95%;
+  background-image: url("/img/trapezoid.svg");
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 2.5rem;
+}
+
+.infobox__number {
+  border: 2px solid white;
+  border-radius: 5rem;
+  height: 2.2rem;
+  width: 2.2rem;
+  display: block;
+  text-align: center;
+  /* margin: */
+  padding: 0.4rem 0.3rem;
+  color: #ffffff;
+  flex-grow: 0;
+}
+
+.infobox__text {
+  color: #ffffff;
+  margin-left: 1rem;
+}

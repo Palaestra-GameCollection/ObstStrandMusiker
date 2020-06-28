@@ -1,0 +1,48 @@
+.cardpage {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.inputgroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputgroup .button--svg {
+  z-index: 0;
+  margin-top: -0.55rem;
+}
+.inputgroup .numberinput {
+  z-index: 10;
+}
+
+.menu .numberinput,
+.menu .button {
+  width: 9.8rem;
+}
+
+.cardpage .button--back {
+  position: absolute;
+  top: -0.55rem;
+  width: 12rem;
+}
+
+.cardpage__infobox {
+  position: absolute;
+  bottom: 0;
+}
+
+.cardpage__card {
+  position: absolute;
+  bottom: 7%;
+  width: 75%;
+  padding-bottom: 7%;
+  padding-top: 3%;
+  overflow: hidden;
+}

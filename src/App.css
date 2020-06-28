@@ -1,0 +1,65 @@
+.desktop_wrapper {
+  height: 100%;
+  width: 100%;
+  background-image: url("/img/background.jpg");
+  background-size: unset;
+  background-repeat: repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.desktop_wrapper__sidebar {
+  display: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  flex-grow: 1;
+  height: 80%;
+  overflow: hidden;
+}
+
+.desktop_wrapper__pencil {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  z-index: 1;
+}
+
+.desktop_wrapper__logo {
+  position: absolute;
+  height: 25%;
+  left: 25%;
+  top: 15%;
+  z-index: 2;
+}
+
+.App {
+  z-index: 10;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  flex-shrink: 0;
+  max-width: 450px;
+  max-height: 800px;
+  box-shadow: #33333380 0 0 80px;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 600px) {
+  .desktop_wrapper {
+    justify-content: space-between;
+  }
+  .desktop_wrapper__sidebar {
+    display: flex;
+  }
+  .App {
+    margin: 0 0 0 15%;
+  }
+}
+
+@media only screen and (max-height: 1000px) {
+  .desktop_wrapper__pencil {
+    left: unset;
+  }
+}

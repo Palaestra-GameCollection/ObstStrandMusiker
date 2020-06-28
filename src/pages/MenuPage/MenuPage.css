@@ -1,0 +1,34 @@
+.menu {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.inputgroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputgroup .button--svg {
+  z-index: 0;
+  margin-top: -0.55rem;
+}
+.inputgroup .numberinput {
+  z-index: 10;
+}
+
+.menu .numberinput,
+.menu .button {
+  width: 9.8rem;
+}
+
+.menu .button--credits {
+  position: absolute;
+  bottom: 0;
+  width: 11rem;
+}

@@ -1,0 +1,18 @@
+.button {
+  color: #ffffff;
+  border-radius: 0;
+  background-color: #333333;
+  padding: 0.6rem 1.2rem;
+  text-align: center;
+  font-size: 1rem;
+  position: relative;
+  display: inline-block;
+  box-shadow: #33333380 0px 0px 10px;
+  line-height: 1.2rem;
+}
+
+.button,
+.button--svg {
+  cursor: pointer;
+  border: none;
+}

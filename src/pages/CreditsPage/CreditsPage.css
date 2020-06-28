@@ -1,0 +1,17 @@
+.credits {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.credits .button--back {
+  position: absolute;
+  top: -0.55rem;
+  left: 25%;
+  right: 0;
+  width: 50%;
+}
