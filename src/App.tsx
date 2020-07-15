@@ -1,13 +1,16 @@
 import React from "react";
 import "./App.css";
 // import { AnimatePresence } from "framer-motion";
-import { Switch, Route, useLocation, withRouter } from "react-router-dom";
+import { useLocation, withRouter } from "react-router-dom";
 import { MenuPage, CardPage, Credits } from "./pages/";
 import { useDispatch } from "react-redux";
 import { fetchData } from "./redux/game/gameActions";
+import {
+  AnimatedRoutes,
+  RouteTransition,
+} from "./components/RoutingTransition/RoutingTransition";
 
 function App() {
-  const location = useLocation();
   const dispatch = useDispatch();
 
   React.useEffect(() => {
@@ -17,19 +20,17 @@ function App() {
   return (
     <section className='desktop_wrapper'>
       <div className='App'>
-        {/* <AnimatePresence exitBeforeEnter={false}> */}
-        <Switch location={location} key={location.pathname}>
-          <Route path='/card/:cardId'>
+        <AnimatedRoutes exitBeforeEnter initial={false}>
+          <RouteTransition exact path='/card/:cardId'>
             <CardPage />
-          </Route>
-          <Route path='/credits'>
+          </RouteTransition>
+          <RouteTransition path='/credits'>
             <Credits />
-          </Route>
-          <Route exact path='/'>
+          </RouteTransition>
+          <RouteTransition exact path='/'>
             <MenuPage />
-          </Route>
-        </Switch>
-        {/* </AnimatePresence> */}
+          </RouteTransition>
+        </AnimatedRoutes>
       </div>
 
       <aside className='desktop_wrapper__sidebar'>

@@ -5,6 +5,7 @@ import { Button, InfoBox, Card } from "../../components";
 import { useParams, RouteComponentProps, withRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootStateType } from "../../redux/reducer";
+import { motion } from "framer-motion";
 
 export interface CardPageProps extends RouteComponentProps<any> {}
 
@@ -37,10 +38,28 @@ const CardPage: React.FunctionComponent<CardPageProps> = (props) => {
           props.history.push("/");
         }}
       />
-      <Card
-        className='cardpage__card'
-        values={currentCard.Words.map((index) => words[index].toLowerCase())}
-      />
+
+      <motion.div
+        animate={{ y: ["100%", "7%"] }}
+        transition={{
+          delay: 0.5,
+          x: { type: "spring", stiffness: 100 },
+          default: { duration: 1 },
+        }}
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          // translateY: "100%",
+        }}
+      >
+        <Card
+          className='cardpage__card'
+          values={currentCard.Words.map((index) => words[index].toLowerCase())}
+        />
+      </motion.div>
       <InfoBox
         className='cardpage__infobox'
         infoNumber={cardId.length <= 2 ? cardId : "nn"}

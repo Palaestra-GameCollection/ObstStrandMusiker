@@ -5,6 +5,7 @@
 .card__valuelist {
   list-style: none;
   counter-reset: items;
+  padding: 0 1rem 0 2rem;
 }
 
 .card__valuelist .card__value {
