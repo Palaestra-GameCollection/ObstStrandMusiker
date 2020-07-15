@@ -2,15 +2,16 @@ import React from "react";
 import "./CreditsPage.css";
 import * as seedrandom from "seedrandom";
 import { Button } from "../../components";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, withRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootStateType } from "../../redux/reducer";
 
-export interface CreditsProps {}
+export interface CreditsProps {
+  history: any;
+}
 
 const Credits: React.FunctionComponent<CreditsProps> = (props) => {
   const { cardId }: { cardId: string } = useParams();
-  const history = useHistory();
   const words = useSelector((state: RootStateType) => state.game.words);
   const cards = useSelector((state: RootStateType) => state.game.cards);
   let currentCard = cards.filter((card) => card.Id === cardId)[0];
@@ -35,7 +36,7 @@ const Credits: React.FunctionComponent<CreditsProps> = (props) => {
         edge='top'
         className='button--back'
         onClick={() => {
-          history.push("/");
+          props.history.push("/");
         }}
       />
       <div>not implemented yet</div>
@@ -43,7 +44,7 @@ const Credits: React.FunctionComponent<CreditsProps> = (props) => {
   );
 };
 
-export default Credits;
+export default withRouter(Credits);
 
 function shuffle(array: Array<any>, seed?: string) {
   if (seed == null) {

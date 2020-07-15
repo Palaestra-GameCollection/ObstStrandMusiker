@@ -35,11 +35,11 @@ sagaMiddleware.run(rootSaga);
 
 render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter forceRefresh={true}>
+    <BrowserRouter>
+      <Provider store={store}>
         <App />
-      </BrowserRouter>
-    </Provider>
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

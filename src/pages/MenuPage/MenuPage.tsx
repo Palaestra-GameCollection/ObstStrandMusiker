@@ -3,13 +3,14 @@ import "./MenuPage.css";
 import { Button, NumberInput } from "../../components";
 import { useSelector } from "react-redux";
 import { RootStateType } from "../../redux/reducer";
-import { useHistory } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
-export interface MenuPageProps {}
+export interface MenuPageProps {
+  history: any;
+}
 
 const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
   const cards = useSelector((state: RootStateType) => state.game.cards);
-  const history = useHistory();
   const [cardValue, setCardValue] = useState(1);
   const [selectCard, setSelectCard] = useState(false);
 
@@ -19,13 +20,15 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
       <Button
         value={"zufällige\nbegriffe"}
         onClick={() => {
-          history.push("/card/" + Math.random().toString().replace(".", ""));
+          props.history.push(
+            "/card/" + Math.random().toString().replace(".", "")
+          );
         }}
       />
       <Button
         value={"zufällige\nkarte"}
         onClick={() => {
-          history.push("/card/" + getRandomInt(0, cards.length - 1));
+          props.history.push("/card/" + getRandomInt(0, cards.length - 1));
         }}
       />
       <Button
@@ -51,7 +54,7 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
             edge='top'
             className='button--cardselect'
             onClick={() => {
-              history.push("/card/" + cardValue.toString());
+              props.history.push("/card/" + cardValue.toString());
             }}
           />
         </div>
@@ -64,14 +67,14 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
         edge='bottom'
         className='button--credits'
         onClick={() => {
-          history.push("/credits");
+          props.history.push("/credits");
         }}
       />
     </main>
   );
 };
 
-export default MenuPage;
+export default withRouter(MenuPage);
 
 function getRandomInt(min: number, max: number) {
   min = Math.ceil(min);

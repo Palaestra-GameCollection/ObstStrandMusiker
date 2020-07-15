@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import { AnimatePresence } from "framer-motion";
-import { Switch, Route, useLocation } from "react-router-dom";
+// import { AnimatePresence } from "framer-motion";
+import { Switch, Route, useLocation, withRouter } from "react-router-dom";
 import { MenuPage, CardPage, Credits } from "./pages/";
 import { useDispatch } from "react-redux";
 import { fetchData } from "./redux/game/gameActions";
@@ -17,19 +17,19 @@ function App() {
   return (
     <section className='desktop_wrapper'>
       <div className='App'>
-        <AnimatePresence exitBeforeEnter={false}>
-          <Switch location={location} key={location.pathname}>
-            <Route path='/card/:cardId'>
-              <CardPage />
-            </Route>
-            <Route path='/credits'>
-              <Credits />
-            </Route>
-            <Route exact path='/'>
-              <MenuPage />
-            </Route>
-          </Switch>
-        </AnimatePresence>
+        {/* <AnimatePresence exitBeforeEnter={false}> */}
+        <Switch location={location} key={location.pathname}>
+          <Route path='/card/:cardId'>
+            <CardPage />
+          </Route>
+          <Route path='/credits'>
+            <Credits />
+          </Route>
+          <Route exact path='/'>
+            <MenuPage />
+          </Route>
+        </Switch>
+        {/* </AnimatePresence> */}
       </div>
 
       <aside className='desktop_wrapper__sidebar'>
@@ -44,4 +44,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);

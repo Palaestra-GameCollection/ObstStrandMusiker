@@ -2,15 +2,14 @@ import React from "react";
 import "./CardPage.css";
 import * as seedrandom from "seedrandom";
 import { Button, InfoBox, Card } from "../../components";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, RouteComponentProps, withRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootStateType } from "../../redux/reducer";
 
-export interface CardPageProps {}
+export interface CardPageProps extends RouteComponentProps<any> {}
 
 const CardPage: React.FunctionComponent<CardPageProps> = (props) => {
   const { cardId }: { cardId: string } = useParams();
-  const history = useHistory();
   const words = useSelector((state: RootStateType) => state.game.words);
   const cards = useSelector((state: RootStateType) => state.game.cards);
   let currentCard = cards.filter((card) => card.Id === cardId)[0];
@@ -35,7 +34,7 @@ const CardPage: React.FunctionComponent<CardPageProps> = (props) => {
         edge='top'
         className='button--back'
         onClick={() => {
-          history.push("/");
+          props.history.push("/");
         }}
       />
       <Card
@@ -51,7 +50,7 @@ const CardPage: React.FunctionComponent<CardPageProps> = (props) => {
   );
 };
 
-export default CardPage;
+export default withRouter(CardPage);
 
 function shuffle(array: Array<any>, seed?: string) {
   if (seed == null) {
