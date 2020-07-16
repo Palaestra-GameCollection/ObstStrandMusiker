@@ -41,8 +41,16 @@
 .cardpage__card {
   position: absolute;
   bottom: 7%;
-  width: 75%;
+  width: 78%;
   padding-bottom: 7%;
   padding-top: 3%;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 90%;
+}
+
+@media only screen and (min-width: 400px) {
+  .cardpage__card {
+    width: 75%;
+  }
 }

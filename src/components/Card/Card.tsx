@@ -15,7 +15,7 @@ const Card: React.FunctionComponent<CardProps> = (props) => {
         {values.map((value) => {
           return (
             <li className={["card__value"].join(" ")} key={value}>
-              {value}
+              <span>{value}</span>
             </li>
           );
         })}
