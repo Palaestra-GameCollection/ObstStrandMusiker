@@ -39,7 +39,23 @@ const Credits: React.FunctionComponent<CreditsProps> = (props) => {
           props.history.push("/");
         }}
       />
-      <div>not implemented yet</div>
+      <ul className='credits__list'>
+        <li>
+          <a href='https://reactjs.org/'>react</a>
+        </li>
+        <li>
+          <a href='https://redux.js.org/'>redux</a>
+        </li>
+        <li>
+          <a href='https://redux-saga.js.org/'>redux saga</a>
+        </li>
+        <li>
+          <a href='https://www.framer.com/motion/'>framer motion</a>
+        </li>
+        <li>
+          <a href='https://github.com/davidbau/seedrandom'>seedrandom.js</a>
+        </li>
+      </ul>
     </main>
   );
 };

@@ -4,6 +4,7 @@
       viewBox='0 0 216 44'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
+      preserveAspectRatio="none"
     >
       <g>
         <path d='M27.1679 10H187.401L206 44H10L27.1679 10Z' fill='#333333' />

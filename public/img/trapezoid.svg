@@ -5,6 +5,7 @@
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
     className='infobox__svg'
+    preserveAspectRatio="none"
 >
     <g>
         <path d='M36 10H373.5L411 82H0L36 10Z' fill='#333333' />

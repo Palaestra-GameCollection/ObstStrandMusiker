@@ -4,6 +4,7 @@ import { Button, NumberInput } from "../../components";
 import { useSelector } from "react-redux";
 import { RootStateType } from "../../redux/reducer";
 import { withRouter } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 export interface MenuPageProps {
   history: any;
@@ -34,9 +35,27 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
       <Button
         value={"karte\nwählen"}
         onClick={() => {
-          setSelectCard(true);
+          setSelectCard(!selectCard);
         }}
       />
+      {/* <AnimatePresence initial={false}>
+        {selectCard ?? (
+          <motion.section
+            key='content'
+            initial='collapsed'
+            animate='open'
+            exit='collapsed'
+            variants={{
+              open: { opacity: 1, height: "auto" },
+              collapsed: { opacity: 0, height: 0 },
+            }}
+            transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+          >
+            <p>fjsadöjkflöasdjlk</p>
+          </motion.section>
+        )}
+      </AnimatePresence> */}
+
       {selectCard ? (
         <div className='inputgroup'>
           <NumberInput
