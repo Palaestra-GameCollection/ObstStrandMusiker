@@ -38,7 +38,7 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
       />
 
       <motion.div
-        className='inputgroup nooverflow'
+        className='inputgroup'
         key='content'
         initial='collapsed'
         animate={selectCard ? "open" : "collapsed"}
@@ -90,6 +90,13 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
           }}
         />
       </motion.div>
+
+      <Button
+        value={"anleitung"}
+        onClick={() => {
+          props.history.push("/instructions/");
+        }}
+      />
 
       <Button
         value='credits'

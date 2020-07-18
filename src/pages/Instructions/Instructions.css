@@ -1,0 +1,16 @@
+.instructions {
+  padding: 3rem 1rem;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  text-align: justify;
+}
+.instructions .button--back {
+  position: absolute;
+  top: -0.55rem;
+  left: 50%;
+  margin-left: -6rem;
+  width: 12rem;
+}

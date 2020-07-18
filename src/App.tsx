@@ -8,6 +8,7 @@ import {
   AnimatedRoutes,
   RouteTransition,
 } from "./components/RoutingTransition/RoutingTransition";
+import Instructions from "./pages/Instructions/Instructions";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,9 @@ function App() {
           </RouteTransition>
           <RouteTransition path='/credits'>
             <Credits />
+          </RouteTransition>
+          <RouteTransition path='/instructions'>
+            <Instructions />
           </RouteTransition>
           <RouteTransition exact path='/'>
             <MenuPage />
