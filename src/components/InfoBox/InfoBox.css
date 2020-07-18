@@ -28,4 +28,6 @@
 .infobox__text {
   color: #ffffff;
   margin-left: 1rem;
+  word-wrap: break-word;
+  max-width: 80%;
 }
