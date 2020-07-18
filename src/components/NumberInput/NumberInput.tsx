@@ -7,6 +7,7 @@ export interface NumberInputProps {
   step?: number;
   name?: string;
   onChange: (value: number) => void;
+  onEnter: () => void;
   value: number;
   className?: string;
 }
@@ -25,6 +26,11 @@ const NumberInput: React.FunctionComponent<NumberInputProps> = (props) => {
       value={props.value}
       onChange={(event) => {
         props.onChange(Number(event.target.value));
+      }}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          props.onEnter();
+        }
       }}
     />
   );

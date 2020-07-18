@@ -70,6 +70,9 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
             console.log(value);
             setCardValue(value);
           }}
+          onEnter={() => {
+            props.history.push("/card/" + cardValue.toString());
+          }}
         />
         <Button
           value='auswählen'
