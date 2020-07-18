@@ -33,7 +33,7 @@
 }
 
 .menu .button--credits {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 11rem;
 }
