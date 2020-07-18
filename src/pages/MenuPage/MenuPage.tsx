@@ -4,7 +4,7 @@ import { Button, NumberInput } from "../../components";
 import { useSelector } from "react-redux";
 import { RootStateType } from "../../redux/reducer";
 import { withRouter } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export interface MenuPageProps {
   history: any;
@@ -14,18 +14,6 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
   const cards = useSelector((state: RootStateType) => state.game.cards);
   const [cardValue, setCardValue] = useState(1);
   const [selectCard, setSelectCard] = useState(false);
-
-  const variants = {
-    hidden: {
-      width: 0,
-    },
-    normal: {
-      width: 70,
-    },
-    expanded: {
-      width: 150,
-    },
-  };
 
   return (
     <main className='menu'>

@@ -33,7 +33,13 @@
 }
 
 .menu .button--credits {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 11rem;
+}
+
+@media only screen and (max-height: 500px) {
+  .menu .button--credits {
+    display: none;
+  }
 }

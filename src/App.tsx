@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
-// import { AnimatePresence } from "framer-motion";
-import { useLocation, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { MenuPage, CardPage, Credits } from "./pages/";
 import { useDispatch } from "react-redux";
 import { fetchData } from "./redux/game/gameActions";
