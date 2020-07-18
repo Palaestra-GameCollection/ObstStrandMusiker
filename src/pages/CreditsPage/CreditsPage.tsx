@@ -55,6 +55,9 @@ const Credits: React.FunctionComponent<CreditsProps> = (props) => {
         <li>
           <a href='https://github.com/davidbau/seedrandom'>seedrandom.js</a>
         </li>
+        <li>
+          <a href='https://tomeckardt.com'>tom eckardt</a>
+        </li>
       </ul>
     </main>
   );

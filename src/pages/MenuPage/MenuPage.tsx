@@ -38,7 +38,7 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
           setSelectCard(!selectCard);
         }}
       />
-      {/* <AnimatePresence initial={false}>
+      <AnimatePresence initial={false}>
         {selectCard ?? (
           <motion.section
             key='content'
@@ -54,7 +54,7 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
             <p>fjsadöjkflöasdjlk</p>
           </motion.section>
         )}
-      </AnimatePresence> */}
+      </AnimatePresence>
 
       {selectCard ? (
         <div className='inputgroup'>
