@@ -15,9 +15,25 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
   const [cardValue, setCardValue] = useState(1);
   const [selectCard, setSelectCard] = useState(false);
 
+  const variants = {
+    hidden: {
+      width: 0,
+    },
+    normal: {
+      width: 70,
+    },
+    expanded: {
+      width: 150,
+    },
+  };
+
   return (
     <main className='menu'>
-      <img src='/img/logo.svg' alt='Logo von Obst Strand Musiker' />
+      <img
+        className='logo'
+        src='/img/logo.svg'
+        alt='Logo von Obst Strand Musiker'
+      />
       <Button
         value={"zufällige\nbegriffe"}
         onClick={() => {
@@ -32,54 +48,57 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
           props.history.push("/card/" + getRandomInt(0, cards.length - 1));
         }}
       />
-      <Button
-        value={"karte\nwählen"}
-        onClick={() => {
-          setSelectCard(!selectCard);
-        }}
-      />
-      <AnimatePresence initial={false}>
-        {selectCard ?? (
-          <motion.section
-            key='content'
-            initial='collapsed'
-            animate='open'
-            exit='collapsed'
-            variants={{
-              open: { opacity: 1, height: "auto" },
-              collapsed: { opacity: 0, height: 0 },
-            }}
-            transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-          >
-            <p>fjsadöjkflöasdjlk</p>
-          </motion.section>
-        )}
-      </AnimatePresence>
 
-      {selectCard ? (
-        <div className='inputgroup'>
-          <NumberInput
-            min={1}
-            max={12}
-            step={1}
-            value={cardValue}
-            onChange={(value) => {
-              console.log(value);
-              setCardValue(value);
-            }}
-          />
-          <Button
-            value='auswählen'
-            edge='top'
-            className='button--cardselect'
-            onClick={() => {
-              props.history.push("/card/" + cardValue.toString());
-            }}
-          />
-        </div>
-      ) : (
-        ""
-      )}
+      <motion.div
+        className='inputgroup nooverflow'
+        key='content'
+        initial='collapsed'
+        animate={selectCard ? "open" : "collapsed"}
+        exit='collapsed'
+        variants={{
+          open: { opacity: 1, height: "100px" },
+          collapsed: { opacity: 0, height: 0 },
+        }}
+        transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+      >
+        <NumberInput
+          min={1}
+          max={12}
+          step={1}
+          value={cardValue}
+          onChange={(value) => {
+            console.log(value);
+            setCardValue(value);
+          }}
+        />
+        <Button
+          value='auswählen'
+          edge='top'
+          className='button--cardselect'
+          onClick={() => {
+            props.history.push("/card/" + cardValue.toString());
+          }}
+        />
+      </motion.div>
+      <motion.div
+        className='nooverflow'
+        key='content'
+        initial='collapsed'
+        animate={selectCard ? "collapsed" : "open"}
+        exit='collapsed'
+        variants={{
+          open: { opacity: 1, height: "100px" },
+          collapsed: { opacity: 0, height: 0 },
+        }}
+        transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+      >
+        <Button
+          value={"karte\nwählen"}
+          onClick={() => {
+            setSelectCard(!selectCard);
+          }}
+        />
+      </motion.div>
 
       <Button
         value='credits'

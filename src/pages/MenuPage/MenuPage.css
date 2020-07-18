@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .inputgroup {
@@ -22,9 +22,14 @@
   z-index: 10;
 }
 
-.menu .numberinput,
-.menu .button {
+.menu > .numberinput,
+.menu > .button {
   width: 9.8rem;
+  margin-bottom: 10%;
+}
+
+.menu > .logo {
+  margin-bottom: 15%;
 }
 
 .menu .button--credits {
