@@ -12,8 +12,8 @@
 .card__valuelist .card__value {
   display: flex;
   counter-increment: items;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  /* margin-bottom: 0.4rem; */
+  /* font-size: 0.8rem; */
 }
 
 .card__valuelist .card__value span {
@@ -39,8 +39,56 @@
   content: "" counter(items);
 }
 
+@media only screen and (min-height: 750px) {
+  .card__valuelist .card__value {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-height: 750px) {
+  .card__valuelist .card__value {
+    margin-bottom: 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-height: 720px) {
+  .card__valuelist .card__value {
+    margin-bottom: 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-height: 620px) {
+  .card__valuelist .card__value {
+    margin-bottom: 0.4rem;
+    font-size: 0.8rem;
+  }
+}
+
 @media only screen and (min-width: 400px) {
   .card__valuelist {
     padding: 0 1rem 0 2rem;
+  }
+}
+
+@media only screen and (min-height: 750px) and (max-width: 330px) {
+  .card__valuelist .card__value {
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-height: 750px) and (max-width: 330px) {
+  .card__valuelist .card__value {
+    margin-bottom: 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-height: 620px) and (max-width: 330px) {
+  .card__valuelist .card__value {
+    margin-bottom: 0.4rem;
+    font-size: 0.8rem;
   }
 }
