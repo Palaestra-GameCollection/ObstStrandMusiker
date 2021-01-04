@@ -36,9 +36,9 @@ const Instructions: React.FunctionComponent<InstructionsProps> = (props) => {
           Alphabet aufsagen und eine andere Person sagt Stopp
         </li>
         <li>
-          Sobald der Buchstabe bestimmt ist habt ihr 1min (oder länger) Zeit zu
-          jeder Kategorie ein Wort zu finden, das mit dem entsprechenden
-          Buchstaben beginnt.
+          Sobald der Buchstabe bestimmt ist, habt ihr 1min (oder länger) Zeit zu
+          jeder Kategorie (01 - 12) ein Wort zu finden, das mit dem
+          entsprechenden Buchstaben beginnt.
         </li>
         <li>
           Ist die Zeit um, werden alle Worte verglichen. haben zwei Personen das
@@ -59,11 +59,12 @@ const Instructions: React.FunctionComponent<InstructionsProps> = (props) => {
       <ul>
         <li>
           In dieser Runde müssen möglichst viele Begriffe gefunden werden, die
-          zu der untersten Kategorie passen.
+          zu der untersten, schwarz hinterlegten Kategorie passen.
         </li>
         <li>
-          Ansonsten findet es mit einem neuen Buchstaben genau wie Runde 1 &amp;
-          2 statt.
+          Ebenso wie in Runde 1 und 2 findet Runde 3 mit einem neuen Buchstaben
+          statt, wobei es hier kein Problem darstellt, wenn dieser buchstabe
+          schon in einer der Vorrunden ausgewählt wurde.
         </li>
         <li>
           Auch hier bringen nur Antworten einen PUnkt die nur von einem Spieler
