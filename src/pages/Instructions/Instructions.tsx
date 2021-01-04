@@ -36,8 +36,8 @@ const Instructions: React.FunctionComponent<InstructionsProps> = (props) => {
           Alphabet aufsagen und eine andere Person sagt Stopp
         </li>
         <li>
-          Sobald der Buchstabe bestimmt ist, habt ihr 1min (oder länger) Zeit zu
-          jeder Kategorie (01 - 12) ein Wort zu finden, das mit dem
+          Sobald der Buchstabe bestimmt ist, habt ihr 2&nbsp;min (oder länger)
+          Zeit zu jeder Kategorie (01 - 12) ein Wort zu finden, das mit dem
           entsprechenden Buchstaben beginnt.
         </li>
         <li>
