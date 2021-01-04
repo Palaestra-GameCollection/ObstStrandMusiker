@@ -28,7 +28,7 @@ const Instructions: React.FunctionComponent<InstructionsProps> = (props) => {
       <h3>Runde 1</h3>
       <ul>
         <li>
-          Wählt eine Karte mit Kategorieren aus (entweder zufällig oder wählt
+          Wählt eine Karte mit Kategorisieren aus (entweder zufällig oder wählt
           eine bestimmte Karte)
         </li>
         <li>
@@ -37,7 +37,7 @@ const Instructions: React.FunctionComponent<InstructionsProps> = (props) => {
         </li>
         <li>
           Sobald der Buchstabe bestimmt ist habt ihr 1min (oder länger) Zeit zu
-          jeder Kategorie ein Wort zu finden, dass mit dem entsprechenden
+          jeder Kategorie ein Wort zu finden, das mit dem entsprechenden
           Buchstaben beginnt.
         </li>
         <li>
