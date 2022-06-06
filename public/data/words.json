@@ -12,7 +12,6 @@
   "Videospiel / Computerspiel",
   "Pornotitel",
   "Todesursache",
-
   "Männliche Vornamen",
   "Länder",
   "Dinge die kalt sind",
@@ -26,7 +25,6 @@
   "Berühmte Detektive",
   "Dinge zum Sammeln",
   "Das ist manchmal besetzt",
-
   "Gemüse",
   "Königliche Hoheiten",
   "Dinge die stark riechen",
@@ -40,7 +38,6 @@
   "Bäume",
   "Charaktereigenschaften",
   "Bücher & Filme",
-
   "Dinge aus Plastik",
   "Zum Dessert",
   "Teile des Autos",
@@ -54,7 +51,6 @@
   "Farben",
   "Werkzeuge",
   "Lebewesen",
-
   "Sportarten",
   "Songtitel",
   "Körperteile",
@@ -68,7 +64,6 @@
   "Blumen",
   "Auf dem Bauernhof",
   "Wörter mit 3 Buchstaben",
-
   "Fast Food",
   "Dinge die man lesen kann",
   "Politiker/Herrscher",
@@ -82,7 +77,6 @@
   "Mineralien & Edelsteine",
   "Musikinstrumente",
   "Städte",
-
   "Dinge die kleben",
   "Wahrzeichen",
   "Autos",
@@ -96,7 +90,6 @@
   "Extremsport",
   "Dinge die man zumacht",
   "Produkt- & Markennamen",
-
   "Fiktive Personen",
   "Schauspieler/-in",
   "Zeitschriften",
@@ -110,7 +103,6 @@
   "Sport-Ausrüstung",
   "Verbrechen",
   "Berühmte Persönlichkeiten",
-
   "Sänger/-in",
   "Himmelskörper",
   "In der Bäckerei",
@@ -124,7 +116,6 @@
   "Auf dem Feld",
   "Buchtitel",
   "Im Heimwerkermarkt",
-
   "Brücken",
   "Berühmt-berüchtigt",
   "Obst & Südfrüchte",
@@ -138,7 +129,6 @@
   "Dinge die rund sind",
   "Im Fitness-Studio",
   "Essen & Trinken",
-
   "Komponisten",
   "Götter/-innen",
   "Kosenamen",
@@ -152,7 +142,6 @@
   "Davon gibt es immer zwei",
   "Rund um den Fernseher",
   "Das trägt man am Körper",
-
   "Künstler/-in",
   "Kriege & Schlachtfelder",
   "Im Schreibtisch",
@@ -166,7 +155,6 @@
   "Rund ums Bier",
   "Im Zirkus",
   "Popstars & Musikgruppen",
-
   "Berühmte Frauen",
   "Hunderassen",
   "Das ist aus Metall",
@@ -180,12 +168,13 @@
   "Das ist aus Papier",
   "Firmennamen",
   "In der Hand- oder Hosentasche",
-
   "App",
   "Gefühl",
   "Hauptstadt",
   "Gegenstand im aktuellen Raum",
   "Wort das mit dem Buchstabe endet",
   "Eissorten",
-  "Chemisches Element"
+  "Chemisches Element",
+  "Interpret",
+  "Baum"
 ]
