@@ -17,7 +17,6 @@ jobs:
   build_app:
     name: Build app with version number
     runs-on: ubuntu-latest
-    needs: increase_version
     steps:
       - uses: actions/checkout@v2
       - uses: borales/actions-yarn@v2.3.0
