@@ -1,19 +1,22 @@
-import React from "react";
-import "./Instructions.css";
 import { RouteComponentProps, withRouter } from "react-router-dom";
+
 import { Button } from "../../components";
+import React from "react";
+import styles from "./Instructions.module.css";
+import { useRouter } from "next/router";
 
 export interface InstructionsProps extends RouteComponentProps<any> {}
 
 const Instructions: React.FunctionComponent<InstructionsProps> = (props) => {
+  const router = useRouter();
   return (
-    <main className="instructions">
+    <main className={styles.instructions}>
       <Button
         value="zurück"
         edge="top"
-        className="button--back"
+        className={styles["button--back"]}
         onClick={() => {
-          props.history.push("/");
+          router.push("/");
         }}
       />
 
@@ -75,4 +78,4 @@ const Instructions: React.FunctionComponent<InstructionsProps> = (props) => {
   );
 };
 
-export default withRouter(Instructions);
+export default Instructions;
