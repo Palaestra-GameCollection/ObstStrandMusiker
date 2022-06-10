@@ -22,10 +22,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - uses: borales/actions-yarn@v2.3.0
+      - uses: borales/actions-yarn@v3.0.0
         with:
           cmd: install # will run `yarn install` command
-      - uses: borales/actions-yarn@v2.3.0
+      - uses: borales/actions-yarn@v3.0.0
         with:
           cmd: build # will run `yarn export` command
       - name: Upload web-app artifact
