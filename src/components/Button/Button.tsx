@@ -31,7 +31,7 @@ const Button: React.FunctionComponent<ButtonProps> = (props) => {
   function renderEdgeButton(value: string, edge: string) {
     return (
       <svg
-        width="216"
+        width="180"
         height="44"
         viewBox="0 0 216 44"
         fill="none"

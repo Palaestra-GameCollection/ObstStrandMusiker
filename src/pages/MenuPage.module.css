@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .inputgroup {
@@ -33,11 +33,16 @@
   margin-bottom: 15%;
 }
 
+.button--cardselect{
+  margin-top: -13px;
+}
+
 .menu .button--credits {
   position: absolute;
   bottom: 0;
   width: 11rem;
 }
+
 
 @media only screen and (max-height: 500px) {
   .menu .button--credits {

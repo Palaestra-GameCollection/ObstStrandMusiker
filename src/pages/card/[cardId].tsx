@@ -1,7 +1,6 @@
 import * as seedrandom from "seedrandom";
 
 import { Button, Card, InfoBox } from "../../components";
-import { RouteComponentProps, useParams, withRouter } from "react-router-dom";
 
 import React from "react";
 import { RootStateType } from "../../redux/reducer";
@@ -10,9 +9,7 @@ import styles from "./CardPage.module.css";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 
-export interface CardPageProps extends RouteComponentProps<any> {}
-
-const CardPage: React.FunctionComponent<CardPageProps> = (props) => {
+const CardPage: React.FunctionComponent = () => {
   const router = useRouter();
   const words = useSelector((state: RootStateType) => state.game.words);
   const cards = useSelector((state: RootStateType) => state.game.cards);

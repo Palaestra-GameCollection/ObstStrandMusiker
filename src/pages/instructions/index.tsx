@@ -1,13 +1,9 @@
-import { RouteComponentProps, withRouter } from "react-router-dom";
-
 import { Button } from "../../components";
 import React from "react";
 import styles from "./Instructions.module.css";
 import { useRouter } from "next/router";
 
-export interface InstructionsProps extends RouteComponentProps<any> {}
-
-const Instructions: React.FunctionComponent<InstructionsProps> = (props) => {
+const Instructions: React.FunctionComponent = () => {
   const router = useRouter();
   return (
     <main className={styles.instructions}>

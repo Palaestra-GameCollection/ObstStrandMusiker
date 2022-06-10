@@ -80,7 +80,7 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
       </motion.div>
       <motion.div
         className={styles.nooverflow}
-        key="content"
+        key="selectCard"
         initial="collapsed"
         animate={selectCard ? "collapsed" : "open"}
         exit="collapsed"
