@@ -1,48 +1,55 @@
+import { Button, NumberInput } from "../components";
 import React, { useState } from "react";
-import "./MenuPage.css";
-import { Button, NumberInput } from "../../components";
-import { useSelector } from "react-redux";
-import { RootStateType } from "../../redux/reducer";
-import { withRouter } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import { RootStateType } from "../redux/reducer";
+import { fetchData } from "../redux/game/gameActions";
 import { motion } from "framer-motion";
+import styles from "./MenuPage.module.css";
+import { useRouter } from "next/router";
 
 export interface MenuPageProps {
   history: any;
 }
 
 const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  React.useEffect(() => {
+    dispatch(fetchData());
+  }, [dispatch]);
+
   const cards = useSelector((state: RootStateType) => state.game.cards);
   const [cardValue, setCardValue] = useState(1);
   const [selectCard, setSelectCard] = useState(false);
 
   return (
-    <main className='menu'>
+    <main className={styles.menu}>
       <img
-        className='logo'
-        src='/img/logo.svg'
-        alt='Logo von Obst Strand Musiker'
+        className={styles.logo}
+        src="/img/logo.svg"
+        alt="Logo von Obst Strand Musiker"
       />
       <Button
         value={"zufällige\nbegriffe"}
         onClick={() => {
-          props.history.push(
-            "/card/" + Math.random().toString().replace(".", "")
-          );
+          router.push("/card/" + Math.random().toString().replace(".", ""));
         }}
       />
       <Button
         value={"zufällige\nkarte"}
         onClick={() => {
-          props.history.push("/card/" + getRandomInt(0, cards.length - 1));
+          router.push("/card/" + getRandomInt(0, cards.length - 1));
         }}
       />
 
       <motion.div
-        className='inputgroup'
-        key='content'
-        initial='collapsed'
+        className={styles.inputgroup}
+        key="content"
+        initial="collapsed"
         animate={selectCard ? "open" : "collapsed"}
-        exit='collapsed'
+        exit="collapsed"
         variants={{
           open: { opacity: 1, height: "100px" },
           collapsed: { opacity: 0, height: 0 },
@@ -59,24 +66,24 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
             setCardValue(value);
           }}
           onEnter={() => {
-            props.history.push("/card/" + cardValue.toString());
+            router.push("/card/" + cardValue.toString());
           }}
         />
         <Button
-          value='auswählen'
-          edge='top'
-          className='button--cardselect'
+          value="auswählen"
+          edge="top"
+          className={styles["button--cardselect"]}
           onClick={() => {
-            props.history.push("/card/" + cardValue.toString());
+            router.push("/card/" + cardValue.toString());
           }}
         />
       </motion.div>
       <motion.div
-        className='nooverflow'
-        key='content'
-        initial='collapsed'
+        className={styles.nooverflow}
+        key="selectCard"
+        initial="collapsed"
         animate={selectCard ? "collapsed" : "open"}
-        exit='collapsed'
+        exit="collapsed"
         variants={{
           open: { opacity: 1, height: "100px" },
           collapsed: { opacity: 0, height: 0 },
@@ -94,23 +101,23 @@ const MenuPage: React.FunctionComponent<MenuPageProps> = (props) => {
       <Button
         value={"anleitung"}
         onClick={() => {
-          props.history.push("/instructions/");
+          router.push("/instructions/");
         }}
       />
 
       <Button
-        value='credits'
-        edge='bottom'
-        className='button--credits'
+        value="credits"
+        edge="bottom"
+        className={styles["button--credits"]}
         onClick={() => {
-          props.history.push("/credits");
+          router.push("/credits");
         }}
       />
     </main>
   );
 };
 
-export default withRouter(MenuPage);
+export default MenuPage;
 
 function getRandomInt(min: number, max: number) {
   min = Math.ceil(min);

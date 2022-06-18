@@ -1,5 +1,5 @@
 import React from "react";
-import "./NumberInput.css";
+import styles from "./NumberInput.module.css";
 
 export interface NumberInputProps {
   min?: number;
@@ -17,8 +17,8 @@ const NumberInput: React.FunctionComponent<NumberInputProps> = (props) => {
 
   return (
     <input
-      className={[className, "numberinput"].join(" ")}
-      type='number'
+      className={[className, styles.numberinput].join(" ")}
+      type="number"
       name={name}
       min={min}
       max={max}

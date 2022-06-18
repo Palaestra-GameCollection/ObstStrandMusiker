@@ -10,8 +10,10 @@
 
 # production
 /build
+/out
 
 # misc
+/.next
 .DS_Store
 .env.local
 .env.development.local

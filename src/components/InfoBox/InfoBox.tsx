@@ -1,5 +1,5 @@
 import React from "react";
-import "./InfoBox.css";
+import styles from "./InfoBox.module.css";
 
 export interface InfoBoxProps {
   infoNumber?: string;
@@ -10,11 +10,11 @@ export interface InfoBoxProps {
 const InfoBox: React.FunctionComponent<InfoBoxProps> = (props) => {
   const { className, infoNumber, infoText } = props;
   return (
-    <div className={[className, "infobox"].join(" ")}>
-      <div className={["infobox__number"].join(" ")}>
+    <div className={[className, styles.infobox].join(" ")}>
+      <div className={[styles.infobox__number].join(" ")}>
         {String(infoNumber).padStart(2, "0")}
       </div>
-      <div className={["infobox__text"].join(" ")}>{infoText}</div>
+      <div className={[styles.infobox__text].join(" ")}>{infoText}</div>
     </div>
   );
 };

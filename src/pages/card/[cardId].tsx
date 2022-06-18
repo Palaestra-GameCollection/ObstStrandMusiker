@@ -1,18 +1,23 @@
-import React from "react";
-import "./CardPage.css";
 import * as seedrandom from "seedrandom";
-import { Button, InfoBox, Card } from "../../components";
-import { useParams, RouteComponentProps, withRouter } from "react-router-dom";
-import { useSelector } from "react-redux";
+
+import { Button, Card, InfoBox } from "../../components";
+
+import React from "react";
 import { RootStateType } from "../../redux/reducer";
 import { motion } from "framer-motion";
+import styles from "./CardPage.module.css";
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 
-export interface CardPageProps extends RouteComponentProps<any> {}
-
-const CardPage: React.FunctionComponent<CardPageProps> = (props) => {
-  const { cardId }: { cardId: string } = useParams();
+const CardPage: React.FunctionComponent = () => {
+  const router = useRouter();
   const words = useSelector((state: RootStateType) => state.game.words);
   const cards = useSelector((state: RootStateType) => state.game.cards);
+  const { cardId } = router.query as Record<string, string>;
+  if (cardId === undefined) {
+    return <></>;
+  }
+  console.log(cardId);
   let currentCard = cards.filter((card) => card.Id === cardId)[0];
 
   if (words.length === 0 || cards.length === 0) {
@@ -29,13 +34,13 @@ const CardPage: React.FunctionComponent<CardPageProps> = (props) => {
   }
 
   return (
-    <main className='cardpage'>
+    <main className={styles.cardpage}>
       <Button
-        value='zurück'
-        edge='top'
-        className='button--back'
+        value="zurück"
+        edge="top"
+        className={styles["button--back"]}
         onClick={() => {
-          props.history.push("/");
+          router.push("/");
         }}
       />
 
@@ -56,12 +61,12 @@ const CardPage: React.FunctionComponent<CardPageProps> = (props) => {
         }}
       >
         <Card
-          className='cardpage__card'
+          className={styles.cardpage__card}
           values={currentCard.Words.map((index) => words[index].toLowerCase())}
         />
       </motion.div>
       <InfoBox
-        className='cardpage__infobox'
+        className={styles.cardpage__infobox}
         infoNumber={cardId.length <= 2 ? cardId : "nn"}
         infoText={words[currentCard.FinalRound].toLowerCase()}
       />
@@ -69,7 +74,7 @@ const CardPage: React.FunctionComponent<CardPageProps> = (props) => {
   );
 };
 
-export default withRouter(CardPage);
+export default CardPage;
 
 function shuffle(array: Array<any>, seed?: string) {
   if (seed == null) {
